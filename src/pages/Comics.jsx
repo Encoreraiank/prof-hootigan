@@ -166,58 +166,72 @@ export const Comics = () => {
           .spotlight-card-wrap {
             flex-direction: row !important;
             flex-wrap: nowrap !important;
-            align-items: flex-start !important;
+            align-items: stretch !important;
             text-align: left !important;
-            gap: 12px !important;
+            gap: 14px !important;
             padding: 12px !important;
           }
           .spotlight-poster-col {
-            flex: 0 0 95px !important;
-            width: 95px !important;
-            max-width: 95px !important;
+            flex: 0 0 110px !important;
+            width: 110px !important;
+            max-width: 110px !important;
+            display: flex !important;
+            flex-direction: column !important;
+            align-self: stretch !important;
           }
           .spotlight-poster-frame {
-            width: 95px !important;
-            max-width: 95px !important;
-            border-radius: 10px !important;
+            width: 100% !important;
+            max-width: 100% !important;
+            height: 100% !important;
+            flex: 1 !important;
+            display: flex !important;
+            border-radius: 12px !important;
+            overflow: hidden !important;
+            position: relative !important;
           }
           .spotlight-poster-img {
-            width: 95px !important;
-            height: 135px !important;
+            width: 100% !important;
+            height: 100% !important;
+            min-height: 165px !important;
             object-fit: cover !important;
-            border-radius: 10px !important;
+            object-position: center top !important;
+            border-radius: 12px !important;
           }
           .spotlight-details-col {
             flex: 1 1 auto !important;
             min-width: 0 !important;
+            display: flex !important;
+            flex-direction: column !important;
+            justify-content: space-between !important;
             text-align: left !important;
           }
           .spotlight-badge-row {
             gap: 4px !important;
-            margin-bottom: 2px !important;
+            margin-bottom: 3px !important;
           }
           .spotlight-badge-row .badge-pill {
-            font-size: 0.62rem !important;
-            padding: 2px 6px !important;
+            font-size: 0.64rem !important;
+            padding: 2px 7px !important;
           }
           .spotlight-author-text {
             display: none !important;
           }
           .spotlight-series-title {
-            font-size: 1.15rem !important;
+            font-size: 1.18rem !important;
             line-height: 1.15 !important;
             margin: 0 !important;
           }
           .spotlight-series-subtitle {
             font-size: 0.74rem !important;
             color: var(--text-muted) !important;
+            margin-bottom: 2px !important;
           }
           .spotlight-series-desc {
             font-size: 0.74rem !important;
             line-height: 1.35 !important;
-            margin: 4px 0 8px 0 !important;
+            margin: 4px 0 10px 0 !important;
             display: -webkit-box;
-            -webkit-line-clamp: 2;
+            -webkit-line-clamp: 3;
             -webkit-box-orient: vertical;
             overflow: hidden;
           }
@@ -225,13 +239,15 @@ export const Comics = () => {
             flex-direction: column !important;
             align-items: flex-start !important;
             gap: 6px !important;
+            margin-top: auto !important;
           }
           .spotlight-stats-row {
             display: none !important;
           }
           .spotlight-actions-row button {
-            padding: 6px 14px !important;
-            font-size: 0.78rem !important;
+            padding: 7px 16px !important;
+            font-size: 0.8rem !important;
+            box-shadow: 0 4px 12px rgba(37, 35, 43, 0.2) !important;
           }
           .comics-episodes-heading {
             font-size: 1.25rem !important;

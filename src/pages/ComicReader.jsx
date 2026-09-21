@@ -166,48 +166,89 @@ export const ComicReader = () => {
             />
           </div>
 
-          {/* Sticky Note thought beneath comic */}
-          {comic.stickyNote && (
-            <div style={stickyNoteCardStyle}>
-              <div style={pinThumbStyle} />
-              <p style={stickyTextStyle}>"{comic.stickyNote}"</p>
-            </div>
-          )}
-        </div>
-      </div>
+          {/* Clean Episode Navigation directly below comic */}
+          <div className="reader-nav-bar" style={bottomNavBarStyle}>
+            {prevComic ? (
+              <button
+                onClick={() => navigate(`/comics/${prevComic.id}`)}
+                className="pill-btn pill-btn-light reader-nav-btn"
+                title={`Previous: ${prevComic.title}`}
+              >
+                <ChevronLeft size={18} />
+                <span className="desktop-btn-label">Prev: {prevComic.title}</span>
+                <span className="mobile-btn-label">Prev</span>
+              </button>
+            ) : (
+              <div className="nav-btn-spacer" />
+            )}
 
-      {/* 3. Bottom Episode Pagination */}
-      <div className="page-container" style={{ marginTop: '36px' }}>
-        <div style={bottomNavBarStyle}>
-          {prevComic ? (
-            <button
-              onClick={() => navigate(`/comics/${prevComic.id}`)}
-              className="pill-btn pill-btn-light"
-              style={paginationBtnStyle}
+            <Link
+              to="/comics"
+              className="pill-btn pill-btn-light reader-nav-btn reader-all-btn"
+              title="All Episodes"
             >
-              <ChevronLeft size={20} />
-              <span>Previous: {prevComic.title}</span>
-            </button>
-          ) : (
-            <div />
-          )}
-
-          {nextComic ? (
-            <button
-              onClick={() => navigate(`/comics/${nextComic.id}`)}
-              className="pill-btn pill-btn-dark"
-              style={paginationBtnStyle}
-            >
-              <span>Next: {nextComic.title}</span>
-              <ChevronRight size={20} />
-            </button>
-          ) : (
-            <Link to="/comics" className="pill-btn pill-btn-dark" style={paginationBtnStyle}>
               <span>All Episodes</span>
             </Link>
-          )}
+
+            {nextComic ? (
+              <button
+                onClick={() => navigate(`/comics/${nextComic.id}`)}
+                className="pill-btn pill-btn-dark reader-nav-btn"
+                title={`Next: ${nextComic.title}`}
+              >
+                <span className="desktop-btn-label">Next: {nextComic.title}</span>
+                <span className="mobile-btn-label">Next</span>
+                <ChevronRight size={18} />
+              </button>
+            ) : (
+              <div className="nav-btn-spacer" />
+            )}
+          </div>
         </div>
       </div>
+
+      <style>{`
+        .mobile-btn-label {
+          display: none;
+        }
+        .desktop-btn-label {
+          display: inline;
+        }
+        .reader-nav-btn {
+          padding: 8px 18px;
+          font-size: 0.88rem;
+          gap: 6px;
+          white-space: nowrap;
+          transition: transform 0.15s ease;
+        }
+        .reader-nav-btn:hover {
+          transform: translateY(-1px);
+        }
+        .nav-btn-spacer {
+          width: 70px;
+        }
+        @media (max-width: 680px) {
+          .mobile-btn-label {
+            display: inline !important;
+          }
+          .desktop-btn-label {
+            display: none !important;
+          }
+          .reader-nav-bar {
+            margin-top: 12px !important;
+            padding: 8px 10px !important;
+            gap: 8px !important;
+          }
+          .reader-nav-btn {
+            padding: 7px 12px !important;
+            font-size: 0.8rem !important;
+            gap: 4px !important;
+          }
+          .nav-btn-spacer {
+            width: 40px !important;
+          }
+        }
+      `}</style>
     </div>
   );
 };
@@ -296,48 +337,17 @@ const stripImageStyle = {
   display: 'block'
 };
 
-const stickyNoteCardStyle = {
-  position: 'relative',
-  backgroundColor: '#FFFBEA',
-  border: '1px solid #EFE4B5',
-  borderRadius: '12px',
-  padding: '18px 24px',
-  margin: '24px auto 10px auto',
-  maxWidth: '460px',
-  textAlign: 'center',
-  boxShadow: '0 4px 14px rgba(37, 35, 43, 0.04)',
-  transform: 'rotate(-1deg)'
-};
-
-const pinThumbStyle = {
-  position: 'absolute',
-  top: '-7px',
-  left: '50%',
-  transform: 'translateX(-50%)',
-  width: '32px',
-  height: '14px',
-  backgroundColor: 'rgba(235, 200, 140, 0.7)',
-  borderRadius: '2px'
-};
-
-const stickyTextStyle = {
-  fontFamily: 'var(--font-hand)',
-  fontSize: '1.4rem',
-  color: '#4B4232',
-  margin: 0,
-  lineHeight: '1.2'
-};
-
 const bottomNavBarStyle = {
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'space-between',
-  gap: '16px',
-  padding: '14px 20px',
+  gap: '12px',
+  marginTop: '16px',
+  padding: '10px 14px',
   backgroundColor: '#FFFFFF',
   borderRadius: '16px',
   border: '1px solid var(--border-card)',
-  boxShadow: 'var(--shadow-sm)'
+  boxShadow: '0 4px 16px rgba(37, 35, 43, 0.06)'
 };
 
 const paginationBtnStyle = {

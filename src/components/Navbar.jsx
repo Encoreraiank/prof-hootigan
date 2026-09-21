@@ -1,29 +1,29 @@
 import React, { useState } from 'react';
 import { NavLink, Link } from 'react-router-dom';
-import { ShoppingBag, Search, ArrowRight, Menu, X } from 'lucide-react';
+import { ShoppingBag, Search, ArrowRight } from 'lucide-react';
 import { useStore } from '../context/StoreContext';
 import { SearchModal } from './SearchModal';
 
 export const Navbar = () => {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const { setIsDrawerOpen } = useStore();
 
   return (
     <>
-      <header style={headerStyle}>
-        <div className="page-container" style={navContainerStyle}>
-          {/* Brand Logo matching mockup */}
-          <Link to="/" style={brandLinkStyle}>
+      <header style={headerStyle} className="site-navbar">
+        <div className="page-container navbar-inner-container" style={navContainerStyle}>
+          {/* Brand Logo */}
+          <Link to="/" style={brandLinkStyle} className="navbar-brand">
             <img
               src="./assets/branding/prof-hootigan-logo.png"
               alt="Prof Hootigan"
-              style={{ height: '42px', width: 'auto', objectFit: 'contain' }}
+              className="navbar-brand-logo"
+              style={{ height: '40px', width: 'auto', objectFit: 'contain' }}
             />
           </Link>
 
-          {/* Desktop Navigation Links */}
-          <nav className="desktop-nav" style={desktopNavStyle}>
+          {/* Navigation Links (Visible on both Desktop and Mobile, arranged properly) */}
+          <nav className="navbar-links" style={desktopNavStyle}>
             <NavLink
               to="/"
               end
@@ -45,79 +45,30 @@ export const Navbar = () => {
             </NavLink>
           </nav>
 
-          {/* Right Action Buttons */}
-          <div style={actionsStyle}>
+          {/* Right Action Buttons: Search + Store (Replaces hamburger menu on mobile) */}
+          <div style={actionsStyle} className="navbar-actions">
             <button
               onClick={() => setIsSearchOpen(true)}
               style={searchBtnStyle}
+              className="navbar-search-btn"
               aria-label="Search comics"
               title="Search"
             >
-              <Search size={20} color="var(--text-ink)" />
+              <Search size={18} color="var(--text-ink)" />
             </button>
 
             {/* Store Pill Button */}
             <button
               onClick={() => setIsDrawerOpen(true)}
-              className="pill-btn pill-btn-dark store-btn-desktop"
-              style={{ padding: '9px 18px', gap: 8, fontSize: '0.92rem' }}
+              className="pill-btn pill-btn-dark navbar-store-btn"
+              aria-label="Open Store"
             >
-              <ShoppingBag size={16} />
+              <ShoppingBag size={15} />
               <span>Store</span>
-              <ArrowRight size={15} />
-            </button>
-
-            {/* Mobile Menu Button */}
-            <button
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="mobile-toggle-btn"
-              style={mobileToggleBtnStyle}
-              aria-label="Toggle Menu"
-            >
-              {mobileMenuOpen ? <X size={22} /> : <Menu size={22} />}
+              <ArrowRight size={14} className="store-arrow-icon" />
             </button>
           </div>
         </div>
-
-        {/* Mobile Dropdown Menu */}
-        {mobileMenuOpen && (
-          <div className="mobile-dropdown-menu" style={mobileMenuContainerStyle}>
-            <NavLink
-              to="/"
-              end
-              onClick={() => setMobileMenuOpen(false)}
-              style={mobileNavLinkStyle}
-            >
-              Home
-            </NavLink>
-            <NavLink
-              to="/comics"
-              onClick={() => setMobileMenuOpen(false)}
-              style={mobileNavLinkStyle}
-            >
-              Comics
-            </NavLink>
-            <NavLink
-              to="/about"
-              onClick={() => setMobileMenuOpen(false)}
-              style={mobileNavLinkStyle}
-            >
-              Prof Hootigan
-            </NavLink>
-            <button
-              onClick={() => {
-                setMobileMenuOpen(false);
-                setIsDrawerOpen(true);
-              }}
-              className="pill-btn pill-btn-dark"
-              style={{ width: 'fit-content', padding: '10px 18px', marginTop: 6 }}
-            >
-              <ShoppingBag size={16} />
-              <span>Store</span>
-              <ArrowRight size={15} />
-            </button>
-          </div>
-        )}
       </header>
 
       {/* Global Search Modal */}
@@ -132,6 +83,7 @@ export const Navbar = () => {
           padding: 6px 2px;
           text-decoration: none;
           transition: color 0.15s ease;
+          white-space: nowrap;
         }
         .nav-item:hover {
           color: var(--accent-coral);
@@ -146,15 +98,52 @@ export const Navbar = () => {
           background-color: var(--accent-coral);
           border-radius: 4px;
         }
+        .navbar-store-btn {
+          padding: 9px 18px;
+          gap: 7px;
+          font-size: 0.92rem;
+        }
         @media (max-width: 768px) {
-          .desktop-nav {
+          .navbar-inner-container {
+            padding: 0 10px !important;
+            gap: 6px !important;
+          }
+          .navbar-brand-logo {
+            height: 32px !important;
+          }
+          .navbar-links {
+            gap: 12px !important;
+          }
+          .nav-item {
+            font-size: 0.82rem !important;
+            padding: 4px 1px !important;
+          }
+          .navbar-actions {
+            gap: 6px !important;
+          }
+          .navbar-search-btn {
+            width: 32px !important;
+            height: 32px !important;
+          }
+          .navbar-store-btn {
+            padding: 6px 11px !important;
+            font-size: 0.78rem !important;
+            gap: 5px !important;
+          }
+          .store-arrow-icon {
             display: none !important;
           }
-          .store-btn-desktop {
-            display: none !important;
+        }
+        @media (max-width: 400px) {
+          .navbar-links {
+            gap: 7px !important;
           }
-          .mobile-toggle-btn {
-            display: flex !important;
+          .nav-item {
+            font-size: 0.76rem !important;
+          }
+          .navbar-store-btn {
+            padding: 5px 9px !important;
+            font-size: 0.74rem !important;
           }
         }
       `}</style>
@@ -177,25 +166,28 @@ const headerStyle = {
 const navContainerStyle = {
   display: 'flex',
   alignItems: 'center',
-  justifyContent: 'space-between'
+  justifyContent: 'space-between',
+  width: '100%'
 };
 
 const brandLinkStyle = {
   display: 'flex',
   alignItems: 'center',
-  textDecoration: 'none'
+  textDecoration: 'none',
+  flexShrink: 0
 };
 
 const desktopNavStyle = {
   display: 'flex',
   alignItems: 'center',
-  gap: '32px'
+  gap: '28px'
 };
 
 const actionsStyle = {
   display: 'flex',
   alignItems: 'center',
-  gap: '14px'
+  gap: '12px',
+  flexShrink: 0
 };
 
 const searchBtnStyle = {
@@ -207,35 +199,4 @@ const searchBtnStyle = {
   borderRadius: '50%',
   color: 'var(--text-ink)',
   cursor: 'pointer'
-};
-
-const mobileToggleBtnStyle = {
-  display: 'none',
-  padding: '6px',
-  color: 'var(--text-ink)',
-  cursor: 'pointer'
-};
-
-const mobileMenuContainerStyle = {
-  position: 'absolute',
-  top: 'var(--navbar-height)',
-  left: 0,
-  right: 0,
-  backgroundColor: 'rgba(255, 255, 255, 0.88)',
-  backdropFilter: 'blur(20px) saturate(180%)',
-  WebkitBackdropFilter: 'blur(20px) saturate(180%)',
-  borderBottom: '1px solid rgba(255, 255, 255, 0.5)',
-  padding: '20px 24px',
-  display: 'flex',
-  flexDirection: 'column',
-  gap: '14px',
-  boxShadow: '0 12px 32px rgba(37, 35, 43, 0.12)'
-};
-
-const mobileNavLinkStyle = {
-  fontSize: '1.05rem',
-  fontWeight: 700,
-  color: 'var(--text-ink)',
-  textDecoration: 'none',
-  padding: '6px 0'
 };
