@@ -1,0 +1,80 @@
+export const products = [
+  {
+    id: "prod-poster-s1",
+    name: "Catastrophe Club Season 1 Poster",
+    tagline: "The Daily Grind of Being Feline",
+    price: 18.00,
+    category: "Prints",
+    rating: 5.0,
+    reviewsCount: 42,
+    image: "/assets/store/product-poster.png",
+    description: "High-grade 250gsm archival matte print featuring the iconic sunset rooftop illustration of Catastrophe Club Season 1. Fits standard frames.",
+    details: ["Size: 12\" × 18\" (A3)", "Archival fade-resistant ink", "Individually signed by Prof Hootigan"],
+    inStock: true
+  },
+  {
+    id: "prod-mug-paws",
+    name: "\"Paws. Pause. Recharge.\" Ceramic Mug",
+    tagline: "For long nights and warm sips",
+    price: 16.50,
+    category: "Drinkware",
+    rating: 4.9,
+    reviewsCount: 38,
+    image: "/assets/store/product-mug.png",
+    description: "As seen in Episode 01! Heavyweight ceramic coffee mug with the cozy 'Paws Pause Recharge' slogan and black cat mascot silhouette.",
+    details: ["Capacity: 11 oz / 330 ml", "Dishwasher & microwave safe", "Glossy warm cream finish"],
+    inStock: true
+  },
+  {
+    id: "prod-stickers-bundle",
+    name: "Cat Cuddle & Friends Vinyl Sticker Pack",
+    tagline: "Waterproof & scratch resistant",
+    price: 9.00,
+    category: "Stickers",
+    rating: 5.0,
+    reviewsCount: 65,
+    image: "/assets/store/product-stickers.png",
+    description: "A pack of 6 premium die-cut vinyl stickers including Black Cat, Cream Cat with coffee, Rejection Bot, and sticky note affirmations.",
+    details: ["6 die-cut waterproof stickers", "UV protected laminate", "Perfect for laptops, water bottles & sketchbooks"],
+    inStock: true
+  },
+  {
+    id: "prod-pin-hootigan",
+    name: "Prof Hootigan Running Enamel Pin",
+    tagline: "Spreading good ideas on the go",
+    price: 12.00,
+    category: "Pins",
+    rating: 4.8,
+    reviewsCount: 29,
+    image: "/assets/store/product-pin.png",
+    description: "Hard enamel collectible lapel pin depicting Prof Hootigan running with his field sketchbook.",
+    details: ["1.5\" Hard enamel with gold plating", "Dual black rubber clutches", "Custom illustrated backing card"],
+    inStock: true
+  },
+  {
+    id: "prod-print-robot",
+    name: "\"Reject All / New Opportunity\" Mini Print",
+    tagline: "Turn setbacks into comebacks",
+    price: 10.00,
+    category: "Prints",
+    rating: 4.9,
+    reviewsCount: 19,
+    image: "/assets/store/product-robot.png",
+    description: "Desk-sized mini art print of our favorite pixelated Rejection Bot turning green with brand new opportunities.",
+    details: ["Size: 5\" × 7\" postcard size", "Thick 350gsm textured cardstock", "Includes cute cardboard stand"],
+    inStock: true
+  },
+  {
+    id: "prod-seeds-support",
+    name: "Feed the Hootigan Pumpkin Seeds Pouch",
+    tagline: "Daana for the owl & creator support",
+    price: 6.00,
+    category: "Support",
+    rating: 5.0,
+    reviewsCount: 112,
+    image: "/assets/store/product-seeds.png",
+    description: "Symbolic snack support for Prof Hootigan! Every purchase directly funds the next chapter of Catastrophe Club and sends a big thank-you note.",
+    details: ["Includes personalized digital wallpaper", "Name listed on the Thank You backers wall", "100% directly supports comic creation"],
+    inStock: true
+  }
+];

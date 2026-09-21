@@ -1,0 +1,204 @@
+@import './variables.css';
+
+/* CSS Reset & Base */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--bg-cream);
+  color: var(--text-ink);
+  line-height: 1.55;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+}
+
+/* Typography styles */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  line-height: 1.25;
+  color: var(--text-ink);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+button {
+  font-family: var(--font-body);
+  border: none;
+  cursor: pointer;
+  background: none;
+}
+
+/* Layout Utilities */
+.page-container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--spacing-desktop);
+  width: 100%;
+}
+
+@media (max-width: 900px) {
+  .page-container {
+    padding: 0 var(--spacing-tablet);
+  }
+}
+
+@media (max-width: 600px) {
+  .page-container {
+    padding: 0 var(--spacing-mobile);
+  }
+}
+
+/* Common UI Elements */
+.pill-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 11px 22px;
+  border-radius: var(--radius-pill);
+  font-weight: 700;
+  font-size: 0.95rem;
+  transition: all var(--transition-fast);
+  cursor: pointer;
+}
+
+.pill-btn-dark {
+  background-color: var(--text-ink);
+  color: #FFFFFF;
+  border: 1px solid var(--text-ink);
+}
+
+.pill-btn-dark:hover {
+  background-color: #3b3745;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(37, 35, 43, 0.15);
+}
+
+.pill-btn-light {
+  background-color: #FFFFFF;
+  color: var(--text-ink);
+  border: 1px solid var(--border-card);
+}
+
+.pill-btn-light:hover {
+  background-color: #FAF8F5;
+  border-color: var(--border-strong);
+  transform: translateY(-1px);
+}
+
+.pill-btn-coral {
+  background-color: var(--accent-coral);
+  color: #FFFFFF;
+  border: 1px solid var(--accent-coral);
+}
+
+.pill-btn-coral:hover {
+  background-color: #e0727b;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(233, 137, 145, 0.3);
+}
+
+.badge-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 12px;
+  border-radius: var(--radius-pill);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  font-family: var(--font-display);
+}
+
+.badge-lavender {
+  background-color: #EFE6FA;
+  color: #583F8C;
+  border: 1px solid #DFCEF6;
+}
+
+.badge-coral {
+  background-color: var(--coral-light);
+  color: #C03F4A;
+}
+
+.sticky-note-text {
+  font-family: var(--font-hand);
+  font-size: 1.25rem;
+  line-height: 1.15;
+  color: #4A4656;
+}
+
+/* Subtle Card Box */
+.card-box {
+  background-color: var(--bg-white);
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-smooth);
+}
+
+.card-box:hover {
+  border-color: var(--border-strong);
+  box-shadow: var(--shadow-hover);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-cream);
+}
+::-webkit-scrollbar-thumb {
+  background: #D8D2C6;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #BDB6A8;
+}
+
+/* Pulse animation for interactive buttons */
+@keyframes heartBeat {
+  0% { transform: scale(1); }
+  14% { transform: scale(1.15); }
+  28% { transform: scale(1); }
+  42% { transform: scale(1.15); }
+  70% { transform: scale(1); }
+}
+
+.pulse-hover:hover {
+  animation: heartBeat 1.2s infinite;
+}
