@@ -47,7 +47,7 @@ export const FeedTheHootigan = ({ compact = false }) => {
         <div style={illusColStyle}>
           <div style={illusCardStyle}>
             <img
-              src="/assets/characters/feed-the-hootigan.png"
+              src="./assets/characters/feed-the-hootigan.png"
               alt="Feed the Hootigan with pumpkin seeds"
               style={bowlImgStyle}
             />

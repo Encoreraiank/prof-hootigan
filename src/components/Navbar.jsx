@@ -16,7 +16,7 @@ export const Navbar = () => {
           {/* Brand Logo matching mockup */}
           <Link to="/" style={brandLinkStyle}>
             <img
-              src="/assets/branding/prof-hootigan-logo.png"
+              src="./assets/branding/prof-hootigan-logo.png"
               alt="Prof Hootigan"
               style={{ height: '42px', width: 'auto', objectFit: 'contain' }}
             />

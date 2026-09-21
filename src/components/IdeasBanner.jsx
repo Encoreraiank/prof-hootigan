@@ -6,7 +6,7 @@ export const IdeasBanner = () => {
     <div style={containerStyle}>
       <Link to="/about" style={linkWrapperStyle} title="Learn about Prof Hootigan">
         <img
-          src="/assets/banners/bottomk.png"
+          src="./assets/banners/bottomk.png"
           alt="Prof Hootigan — Ideas Take Flight"
           style={bannerImgStyle}
         />

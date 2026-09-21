@@ -37,7 +37,7 @@ export const StoreDrawer = () => {
 
         <div style={bodyStyle}>
           <img
-            src="/assets/branding/logo-icon.png"
+            src="./assets/branding/logo-icon.png"
             alt="Prof Hootigan Owl"
             style={{ width: 72, height: 72, margin: '0 auto 16px auto', display: 'block' }}
           />

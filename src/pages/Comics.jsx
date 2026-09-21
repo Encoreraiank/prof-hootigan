@@ -23,21 +23,21 @@ export const Comics = () => {
       role: "The Tired Overthinker",
       bio: "Works hard, worries a little too much, and needs lots of reassurance and coffee mugs.",
       quote: "Some days just feel heavier than usual... ♡",
-      avatar: "/assets/characters/cats-together.png"
+      avatar: "./assets/characters/cats-together.png"
     },
     {
       name: "The Cream Cat",
       role: "The Cheerful Companion",
       bio: "Wears a blue scarf, always brings hot coffee, and knows when a buddy needs a distraction.",
       quote: "Rough days are part of the story. You got this! ♡",
-      avatar: "/assets/characters/char-cream-cat.png"
+      avatar: "./assets/characters/char-cream-cat.png"
     },
     {
       name: "Rejection Bot",
       role: "The Reformed Machine",
       bio: "Used to stamp 'REJECT ALL' all day until distracted by a red laser and a green button.",
       quote: "New Opportunity! ✨",
-      avatar: "/assets/characters/char-bot.png"
+      avatar: "./assets/characters/char-bot.png"
     }
   ];
 
@@ -48,7 +48,7 @@ export const Comics = () => {
       <section style={topBannerSectionStyle}>
         <div style={topBannerWrapperStyle} className="hero-banner-frame">
           <img
-            src="/assets/animated/herocom.gif"
+            src="./assets/animated/herocom.gif"
             alt="Catastrophe Club — Animated Moving Train Journey"
             style={topBannerImgStyle}
           />
@@ -111,7 +111,7 @@ export const Comics = () => {
             {/* Poster */}
             <div style={posterFrameStyle} onClick={() => navigate('/comics/ep-01')}>
               <img
-                src="/assets/comics/catastrophe-club/cover.png"
+                src="./assets/comics/catastrophe-club/cover.png"
                 alt="Catastrophe Club Season 1 Poster"
                 style={posterImgStyle}
               />

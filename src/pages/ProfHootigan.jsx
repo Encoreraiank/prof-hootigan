@@ -33,7 +33,7 @@ export const ProfHootigan = () => {
         <div style={heroIllusColStyle}>
           <div style={heroIllusCardStyle}>
             <img
-              src="/assets/animated/phbnr1.gif"
+              src="./assets/animated/phbnr1.gif"
               alt="Prof Hootigan animated sketching at desk"
               style={heroImgStyle}
             />
@@ -50,7 +50,7 @@ export const ProfHootigan = () => {
         <div style={polaroidColStyle}>
           <div style={polaroidCardStyle} className="polaroid-hover">
             <img
-              src="/assets/characters/prof-hootigan-polaroid.png"
+              src="./assets/characters/prof-hootigan-polaroid.png"
               alt="Prof Hootigan Polaroid — Tiny seeds, big stories"
               style={polaroidImgStyle}
             />

@@ -15,19 +15,19 @@ export const Home = () => {
   const heroBanners = [
     {
       id: 'bnr1',
-      src: '/assets/animated/bnr1.gif',
+      src: './assets/animated/bnr1.gif',
       alt: 'Catastrophe Club — Small Tails, Big Adventures (Sunset Bridge)',
       episodeLink: '/comics/ep-01'
     },
     {
       id: 'bnr2',
-      src: '/assets/animated/bnr2.gif',
+      src: './assets/animated/bnr2.gif',
       alt: 'Catastrophe Club — New Friends and Bright Days',
       episodeLink: '/comics/ep-02'
     },
     {
       id: 'bnr3',
-      src: '/assets/animated/bnr3.gif',
+      src: './assets/animated/bnr3.gif',
       alt: 'Catastrophe Club — Cozy Sunlit Cat Naps',
       episodeLink: '/comics/ep-03'
     }
