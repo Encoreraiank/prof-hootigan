@@ -122,9 +122,9 @@ export const Home = () => {
           </button>
 
           {/* Bottom Controls Bar: Dots + Start Reading CTA */}
-          <div style={heroOverlayControlsStyle}>
+          <div style={heroOverlayControlsStyle} className="hero-overlay-controls">
             {/* Dot Indicators */}
-            <div style={dotsContainerStyle}>
+            <div style={dotsContainerStyle} className="dots-container">
               {heroBanners.map((banner, idx) => (
                 <button
                   key={banner.id}
@@ -159,22 +159,22 @@ export const Home = () => {
       </section>
 
       {/* 2. Latest Episodes Section */}
-      <section style={sectionMarginStyle}>
-        <div style={sectionHeaderStyle}>
-          <div style={headingGroupStyle}>
+      <section style={sectionMarginStyle} className="home-episodes-section">
+        <div style={sectionHeaderStyle} className="home-section-header">
+          <div style={headingGroupStyle} className="home-heading-group">
             <span style={{ color: 'var(--accent-coral)', fontSize: '1.4rem' }}>彡</span>
-            <h2 style={sectionHeadingStyle}>Latest Episodes</h2>
+            <h2 style={sectionHeadingStyle} className="home-section-heading">Latest Episodes</h2>
             <span style={{ color: 'var(--accent-coral)', fontSize: '1.4rem' }}>ミ</span>
           </div>
 
-          <Link to="/comics" style={viewAllLinkStyle}>
+          <Link to="/comics" style={viewAllLinkStyle} className="home-view-all-link">
             <span>View All</span>
             <ArrowRight size={16} />
           </Link>
         </div>
 
         {/* The 3 Actual Episode Cards */}
-        <div style={episodesGridStyle}>
+        <div style={episodesGridStyle} className="episodes-grid">
           {comics.map((comic) => (
             <ComicCard key={comic.id} comic={comic} />
           ))}
@@ -214,13 +214,41 @@ export const Home = () => {
           transform: scale(1.04);
           background-color: #17151C;
         }
-        @media (max-width: 720px) {
+        @media (max-width: 680px) {
           .carousel-nav-arrow {
-            opacity: 0.8 !important;
+            display: none !important;
+          }
+          .hero-overlay-controls {
+            bottom: 8px !important;
+            left: 10px !important;
+            right: 10px !important;
           }
           .hero-start-btn {
-            padding: 8px 16px !important;
-            font-size: 0.82rem !important;
+            padding: 5px 12px !important;
+            font-size: 0.74rem !important;
+            gap: 4px !important;
+          }
+          .dots-container {
+            padding: 3px 8px !important;
+            gap: 5px !important;
+          }
+          .home-section-header {
+            margin-bottom: 12px !important;
+          }
+          .home-section-heading {
+            font-size: 1.25rem !important;
+            white-space: nowrap !important;
+          }
+          .home-heading-group span {
+            font-size: 1.05rem !important;
+          }
+          .home-view-all-link {
+            padding: 4px 10px !important;
+            font-size: 0.78rem !important;
+          }
+          .episodes-grid {
+            grid-template-columns: repeat(2, 1fr) !important;
+            gap: 10px !important;
           }
         }
       `}</style>

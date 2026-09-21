@@ -47,17 +47,18 @@ export const Comics = () => {
       <section style={spotlightSectionStyle}>
         <div style={spotlightCardStyle} className="card-box spotlight-card-wrap">
           {/* Left: Small Compact Poster */}
-          <div style={posterColStyle}>
+          <div style={posterColStyle} className="spotlight-poster-col">
             <div
               style={compactPosterFrameStyle}
               onClick={() => navigate('/comics/ep-01')}
-              className="poster-card-hover"
+              className="poster-card-hover spotlight-poster-frame"
               title="Start reading Catastrophe Club"
             >
               <img
                 src="./assets/comics/catastrophe-club/cover.png"
                 alt="Catastrophe Club Season 1 Poster"
                 style={posterImgStyle}
+                className="spotlight-poster-img"
               />
               <span className="badge-pill badge-coral" style={seasonBadgeStyle}>
                 SEASON 1
@@ -66,8 +67,8 @@ export const Comics = () => {
           </div>
 
           {/* Right: Comic Description & Actions */}
-          <div style={detailsColStyle}>
-            <div style={badgeRowStyle}>
+          <div style={detailsColStyle} className="spotlight-details-col">
+            <div style={badgeRowStyle} className="spotlight-badge-row">
               <span className="badge-pill badge-lavender" style={{ fontSize: '0.74rem' }}>
                 ORIGINAL WEBCOMIC
               </span>
@@ -80,24 +81,24 @@ export const Comics = () => {
               >
                 FREE TO READ
               </span>
-              <span style={{ fontSize: '0.8rem', color: 'var(--text-muted)', fontWeight: 600 }}>
+              <span className="spotlight-author-text" style={{ fontSize: '0.8rem', color: 'var(--text-muted)', fontWeight: 600 }}>
                 • By Prof Hootigan
               </span>
             </div>
 
             <div style={{ display: 'flex', alignItems: 'baseline', gap: '10px', flexWrap: 'wrap', margin: '4px 0 2px 0' }}>
-              <h1 style={seriesTitleStyle}>Catastrophe Club</h1>
-              <span style={seriesSubtitleStyle}>Small Tails, Big Adventures.</span>
+              <h1 style={seriesTitleStyle} className="spotlight-series-title">Catastrophe Club</h1>
+              <span style={seriesSubtitleStyle} className="spotlight-series-subtitle">Small Tails, Big Adventures.</span>
             </div>
 
-            <p style={seriesDescStyle}>
+            <p style={seriesDescStyle} className="spotlight-series-desc">
               Follow two cat companions navigating heavy days, rejection factories, and cozy coffee moments together.
               A gentle comic reminder that rough days are just part of the story.
             </p>
 
             {/* Quick Meta + CTA Row */}
-            <div style={compactActionsRowStyle}>
-              <div style={statsRowStyle}>
+            <div style={compactActionsRowStyle} className="spotlight-actions-row">
+              <div style={statsRowStyle} className="spotlight-stats-row">
                 <span style={statPillStyle}>
                   <BookOpen size={13} color="#554275" />
                   <span>3 Episodes</span>
@@ -128,17 +129,17 @@ export const Comics = () => {
       </section>
 
       {/* 4. EPISODES HEADER */}
-      <div style={episodesHeaderStyle}>
+      <div style={episodesHeaderStyle} className="comics-episodes-header">
         <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
           <span style={{ color: 'var(--accent-coral)', fontSize: '1.2rem' }}>彡</span>
-          <h2 style={episodesHeadingStyle}>Season 1 Episodes</h2>
+          <h2 style={episodesHeadingStyle} className="comics-episodes-heading">Season 1 Episodes</h2>
           <span style={{ color: 'var(--accent-coral)', fontSize: '1.2rem' }}>ミ</span>
         </div>
-        <span style={episodesSubtextStyle}>The Daily Grind of Being Feline • 3 Episodes Available</span>
+        <span style={episodesSubtextStyle} className="comics-episodes-subtext">The Daily Grind of Being Feline • 3 Episodes Available</span>
       </div>
 
       {/* 5. 3 COMPACT EPISODE CARDS (Matches Mockup) */}
-      <div style={episodesGridStyle}>
+      <div style={episodesGridStyle} className="episodes-grid">
         {comics.map((comic) => (
           <ComicCard key={comic.id} comic={comic} />
         ))}
@@ -161,15 +162,90 @@ export const Comics = () => {
           transform: translateY(-3px) scale(1.02);
           box-shadow: 0 12px 24px rgba(37, 35, 43, 0.16);
         }
-        @media (max-width: 768px) {
+        @media (max-width: 680px) {
           .spotlight-card-wrap {
-            flex-direction: column !important;
-            align-items: center !important;
-            text-align: center;
+            flex-direction: row !important;
+            flex-wrap: nowrap !important;
+            align-items: flex-start !important;
+            text-align: left !important;
+            gap: 12px !important;
+            padding: 12px !important;
           }
-          .season-filter-row {
+          .spotlight-poster-col {
+            flex: 0 0 95px !important;
+            width: 95px !important;
+            max-width: 95px !important;
+          }
+          .spotlight-poster-frame {
+            width: 95px !important;
+            max-width: 95px !important;
+            border-radius: 10px !important;
+          }
+          .spotlight-poster-img {
+            width: 95px !important;
+            height: 135px !important;
+            object-fit: cover !important;
+            border-radius: 10px !important;
+          }
+          .spotlight-details-col {
+            flex: 1 1 auto !important;
+            min-width: 0 !important;
+            text-align: left !important;
+          }
+          .spotlight-badge-row {
+            gap: 4px !important;
+            margin-bottom: 2px !important;
+          }
+          .spotlight-badge-row .badge-pill {
+            font-size: 0.62rem !important;
+            padding: 2px 6px !important;
+          }
+          .spotlight-author-text {
+            display: none !important;
+          }
+          .spotlight-series-title {
+            font-size: 1.15rem !important;
+            line-height: 1.15 !important;
+            margin: 0 !important;
+          }
+          .spotlight-series-subtitle {
+            font-size: 0.74rem !important;
+            color: var(--text-muted) !important;
+          }
+          .spotlight-series-desc {
+            font-size: 0.74rem !important;
+            line-height: 1.35 !important;
+            margin: 4px 0 8px 0 !important;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+          }
+          .spotlight-actions-row {
             flex-direction: column !important;
             align-items: flex-start !important;
+            gap: 6px !important;
+          }
+          .spotlight-stats-row {
+            display: none !important;
+          }
+          .spotlight-actions-row button {
+            padding: 6px 14px !important;
+            font-size: 0.78rem !important;
+          }
+          .comics-episodes-heading {
+            font-size: 1.25rem !important;
+          }
+          .comics-episodes-subtext {
+            font-size: 0.74rem !important;
+          }
+          .episodes-grid {
+            grid-template-columns: repeat(2, 1fr) !important;
+            gap: 10px !important;
+          }
+          .season-filter-row {
+            margin: 10px 0 12px 0 !important;
+            gap: 8px !important;
           }
         }
       `}</style>

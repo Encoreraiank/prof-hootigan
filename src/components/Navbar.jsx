@@ -23,7 +23,7 @@ export const Navbar = () => {
           </Link>
 
           {/* Desktop Navigation Links */}
-          <nav style={desktopNavStyle}>
+          <nav className="desktop-nav" style={desktopNavStyle}>
             <NavLink
               to="/"
               end
@@ -81,7 +81,7 @@ export const Navbar = () => {
 
         {/* Mobile Dropdown Menu */}
         {mobileMenuOpen && (
-          <div style={mobileMenuContainerStyle}>
+          <div className="mobile-dropdown-menu" style={mobileMenuContainerStyle}>
             <NavLink
               to="/"
               end
@@ -146,7 +146,10 @@ export const Navbar = () => {
           background-color: var(--accent-coral);
           border-radius: 4px;
         }
-        @media (max-width: 680px) {
+        @media (max-width: 768px) {
+          .desktop-nav {
+            display: none !important;
+          }
           .store-btn-desktop {
             display: none !important;
           }
@@ -218,13 +221,15 @@ const mobileMenuContainerStyle = {
   top: 'var(--navbar-height)',
   left: 0,
   right: 0,
-  backgroundColor: '#FFFFFF',
-  borderBottom: '1px solid var(--border-card)',
+  backgroundColor: 'rgba(255, 255, 255, 0.88)',
+  backdropFilter: 'blur(20px) saturate(180%)',
+  WebkitBackdropFilter: 'blur(20px) saturate(180%)',
+  borderBottom: '1px solid rgba(255, 255, 255, 0.5)',
   padding: '20px 24px',
   display: 'flex',
   flexDirection: 'column',
   gap: '14px',
-  boxShadow: 'var(--shadow-md)'
+  boxShadow: '0 12px 32px rgba(37, 35, 43, 0.12)'
 };
 
 const mobileNavLinkStyle = {

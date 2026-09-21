@@ -12,20 +12,20 @@ export const ComicCard = ({ comic }) => {
       style={cardContainerStyle}
     >
       {/* Thumbnail with Episode Badge */}
-      <div style={thumbWrapperStyle}>
+      <div className="comic-thumb-wrapper" style={thumbWrapperStyle}>
         <img
           src={comic.cover}
           alt={`${comic.episodeCode} - ${comic.title}`}
           style={imageStyle}
           loading="lazy"
         />
-        <span className="badge-pill badge-lavender" style={badgeStyle}>
+        <span className="badge-pill badge-lavender comic-badge" style={badgeStyle}>
           {comic.episodeCode}
         </span>
       </div>
 
       {/* Card Info: Title + Arrow */}
-      <div style={contentRowStyle}>
+      <div className="comic-content-row" style={contentRowStyle}>
         <h3 style={titleStyle}>{comic.title}</h3>
         <button
           className="card-arrow-btn"
@@ -51,9 +51,38 @@ export const ComicCard = ({ comic }) => {
           color: #FFFFFF;
           transform: translateX(2px);
         }
-        @media (max-width: 768px) {
+        @media (max-width: 680px) {
+          .comic-card-container {
+            padding: 8px !important;
+            gap: 6px !important;
+            border-radius: 14px !important;
+          }
+          .comic-thumb-wrapper {
+            border-radius: 10px !important;
+          }
+          .comic-badge {
+            top: 6px !important;
+            left: 6px !important;
+            font-size: 0.65rem !important;
+            padding: 2px 7px !important;
+          }
+          .comic-content-row {
+            padding: 2px 2px !important;
+          }
           .comic-card-container h3 {
-            font-size: 1.05rem !important;
+            font-size: 0.85rem !important;
+            line-height: 1.2 !important;
+            white-space: nowrap !important;
+            overflow: hidden !important;
+            text-overflow: ellipsis !important;
+          }
+          .card-arrow-btn {
+            width: 26px !important;
+            height: 26px !important;
+          }
+          .card-arrow-btn svg {
+            width: 14px !important;
+            height: 14px !important;
           }
         }
       `}</style>

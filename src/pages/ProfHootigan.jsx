@@ -6,32 +6,32 @@ export const ProfHootigan = () => {
   return (
     <div className="about-page page-container" style={{ paddingBottom: '30px' }}>
       {/* 1. Hero / Intro Section */}
-      <section style={heroSectionStyle}>
+      <section style={heroSectionStyle} className="about-hero-section">
         {/* Left text column */}
-        <div style={heroTextColStyle}>
-          <div style={heyThereWrapperStyle}>
-            <span style={heyThereTextStyle}>Hey there!</span>
+        <div style={heroTextColStyle} className="about-hero-text-col">
+          <div style={heyThereWrapperStyle} className="about-hey-wrapper">
+            <span style={heyThereTextStyle} className="about-hey-text">Hey there!</span>
           </div>
 
-          <h1 style={mainTitleStyle}>
+          <h1 style={mainTitleStyle} className="about-hero-title">
             I'm <br />
             Prof Hootigan.
           </h1>
 
-          <p style={taglineStyle}>
+          <p style={taglineStyle} className="about-hero-tagline">
             A curious mind behind small stories and big tomorrows.
           </p>
 
-          <div style={dividerBarStyle} />
+          <div style={dividerBarStyle} className="about-divider-bar" />
 
-          <p style={bioTextStyle}>
+          <p style={bioTextStyle} className="about-bio-text">
             I create comics about everyday moments, messy days and the little things that make life brighter.
           </p>
         </div>
 
         {/* Right illustration column with animated desk scene */}
-        <div style={heroIllusColStyle}>
-          <div style={heroIllusCardStyle}>
+        <div style={heroIllusColStyle} className="about-hero-illus-col">
+          <div style={heroIllusCardStyle} className="about-hero-illus-card">
             <img
               src="./assets/animated/phbnr1.gif"
               alt="Prof Hootigan animated sketching at desk"
@@ -42,13 +42,13 @@ export const ProfHootigan = () => {
       </section>
 
       {/* Subtle Divider */}
-      <div style={sectionDividerStyle} />
+      <div style={sectionDividerStyle} className="about-section-divider" />
 
       {/* 2. The Story Section with high-res Polaroid */}
-      <section style={storySectionStyle}>
+      <section style={storySectionStyle} className="about-story-section">
         {/* Left: Polaroid Photo */}
-        <div style={polaroidColStyle}>
-          <div style={polaroidCardStyle} className="polaroid-hover">
+        <div style={polaroidColStyle} className="about-polaroid-col">
+          <div style={polaroidCardStyle} className="polaroid-hover about-polaroid-card">
             <img
               src="./assets/characters/prof-hootigan-polaroid.png"
               alt="Prof Hootigan Polaroid — Tiny seeds, big stories"
@@ -58,18 +58,18 @@ export const ProfHootigan = () => {
         </div>
 
         {/* Right: Story Text */}
-        <div style={storyTextColStyle}>
-          <span style={categoryLabelStyle}>THE STORY</span>
-          <div style={storyHeaderRowStyle}>
-            <h2 style={storyTitleStyle}>Why I Create</h2>
+        <div style={storyTextColStyle} className="about-story-text-col">
+          <span style={categoryLabelStyle} className="about-category-label">THE STORY</span>
+          <div style={storyHeaderRowStyle} className="about-story-header-row">
+            <h2 style={storyTitleStyle} className="about-story-title">Why I Create</h2>
             <span style={{ color: 'var(--primary-lavender)', fontSize: '1.4rem' }}>彡</span>
           </div>
 
-          <p style={storyParagraphStyle}>
+          <p style={storyParagraphStyle} className="about-story-p">
             Prof Hootigan is my way of exploring ideas, emotions and perspectives through simple stories and relatable characters.
           </p>
 
-          <p style={storyParagraphStyle}>
+          <p style={storyParagraphStyle} className="about-story-p">
             I hope these comics bring a little joy, comfort or a new thought to your day.
           </p>
         </div>
@@ -88,9 +88,90 @@ export const ProfHootigan = () => {
         .polaroid-hover:hover {
           transform: rotate(0deg) scale(1.03) !important;
         }
-        @media (max-width: 800px) {
-          .about-page section {
-            gap: 28px !important;
+        @media (max-width: 680px) {
+          .about-hero-section {
+            flex-direction: row !important;
+            flex-wrap: nowrap !important;
+            align-items: center !important;
+            gap: 12px !important;
+            margin-top: 6px !important;
+            margin-bottom: 16px !important;
+          }
+          .about-hero-text-col {
+            flex: 1 1 auto !important;
+            min-width: 0 !important;
+          }
+          .about-hey-text {
+            font-size: 1.05rem !important;
+          }
+          .about-hero-title {
+            font-size: 1.35rem !important;
+            line-height: 1.15 !important;
+            margin: 0 0 4px 0 !important;
+          }
+          .about-hero-tagline {
+            font-size: 0.78rem !important;
+            line-height: 1.3 !important;
+            margin-bottom: 6px !important;
+          }
+          .about-divider-bar {
+            width: 26px !important;
+            height: 2.5px !important;
+            margin-bottom: 6px !important;
+          }
+          .about-bio-text {
+            font-size: 0.74rem !important;
+            line-height: 1.35 !important;
+          }
+          .about-hero-illus-col {
+            flex: 0 0 115px !important;
+            width: 115px !important;
+            max-width: 115px !important;
+          }
+          .about-hero-illus-card {
+            max-width: 115px !important;
+            border-radius: 12px !important;
+          }
+          .about-section-divider {
+            margin: 14px 0 20px 0 !important;
+          }
+          .about-story-section {
+            flex-direction: row !important;
+            flex-wrap: nowrap !important;
+            align-items: center !important;
+            gap: 12px !important;
+            margin-bottom: 24px !important;
+          }
+          .about-polaroid-col {
+            flex: 0 0 110px !important;
+            width: 110px !important;
+            max-width: 110px !important;
+          }
+          .about-polaroid-card {
+            max-width: 110px !important;
+          }
+          .about-story-text-col {
+            flex: 1 1 auto !important;
+            min-width: 0 !important;
+          }
+          .about-category-label {
+            font-size: 0.68rem !important;
+            margin-bottom: 2px !important;
+          }
+          .about-story-header-row {
+            gap: 6px !important;
+            margin-bottom: 6px !important;
+          }
+          .about-story-title {
+            font-size: 1.25rem !important;
+          }
+          .about-story-header-row span {
+            font-size: 1rem !important;
+          }
+          .about-story-p {
+            font-size: 0.76rem !important;
+            line-height: 1.35 !important;
+            margin-bottom: 6px !important;
           }
         }
       `}</style>

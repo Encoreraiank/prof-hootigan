@@ -6,19 +6,19 @@ export const Footer = () => {
   const isComics = pathname.startsWith('/comics');
 
   return (
-    <footer style={footerStyle}>
+    <footer style={footerStyle} className="site-footer">
       <div className="page-container">
-        <div style={footerDividerStyle} />
+        <div style={footerDividerStyle} className="footer-divider" />
 
-        <div style={footerContentStyle}>
+        <div style={footerContentStyle} className="footer-content">
           {/* Left copyright and motto */}
-          <div style={brandColStyle}>
-            <p style={copyrightStyle}>© 2025 Prof Hootigan</p>
-            <p style={mottoStyle}>Small Stories. Big Tomorrows.</p>
+          <div style={brandColStyle} className="footer-brand-col">
+            <p style={copyrightStyle} className="footer-copyright">© 2025 Prof Hootigan</p>
+            <p style={mottoStyle} className="footer-motto">Small Stories. Big Tomorrows.</p>
           </div>
 
           {/* Center Socials */}
-          <div style={socialsColStyle}>
+          <div style={socialsColStyle} className="footer-socials-col">
             <a
               href="https://instagram.com"
               target="_blank"
@@ -27,7 +27,7 @@ export const Footer = () => {
               aria-label="Instagram"
               title="Instagram"
             >
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <rect width="20" height="20" x="2" y="2" rx="5" ry="5"/>
                 <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
                 <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/>
@@ -42,7 +42,7 @@ export const Footer = () => {
               aria-label="YouTube"
               title="YouTube"
             >
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
               </svg>
             </a>
@@ -55,28 +55,59 @@ export const Footer = () => {
               aria-label="X"
               title="X"
             >
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
               </svg>
             </a>
           </div>
 
           {/* Right handwritten thanks with paw prints */}
-          <div style={thanksColStyle}>
-            <svg width="34" height="26" viewBox="0 0 48 38" fill="#D5CBBF" style={{ opacity: 0.9 }}>
+          <div style={thanksColStyle} className="footer-thanks-col">
+            <svg width="28" height="22" viewBox="0 0 48 38" fill="#D5CBBF" style={{ opacity: 0.9 }}>
               <ellipse cx="24" cy="26" rx="8" ry="7" />
               <circle cx="12" cy="14" r="4" />
               <circle cx="20" cy="8" r="4" />
               <circle cx="28" cy="8" r="4" />
               <circle cx="36" cy="14" r="4" />
             </svg>
-            <div style={thanksTextStyle}>
+            <div style={thanksTextStyle} className="footer-thanks-text">
               <span>{isComics ? 'Thanks' : 'Thanks'}</span>
               <span>{isComics ? 'for reading! ♡' : 'for being here. ♡'}</span>
             </div>
           </div>
         </div>
       </div>
+
+      <style>{`
+        @media (max-width: 680px) {
+          .site-footer {
+            padding-top: 20px !important;
+            padding-bottom: 24px !important;
+          }
+          .footer-divider {
+            margin-bottom: 16px !important;
+          }
+          .footer-content {
+            flex-direction: column !important;
+            align-items: center !important;
+            text-align: center !important;
+            gap: 14px !important;
+          }
+          .footer-brand-col {
+            align-items: center !important;
+            text-align: center !important;
+          }
+          .footer-copyright {
+            font-size: 0.88rem !important;
+          }
+          .footer-motto {
+            font-size: 0.78rem !important;
+          }
+          .footer-thanks-text {
+            font-size: 1.1rem !important;
+          }
+        }
+      `}</style>
     </footer>
   );
 };
