@@ -102,25 +102,25 @@ const heroSectionStyle = {
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'space-between',
-  gap: '36px',
-  marginTop: '24px',
-  marginBottom: '42px',
+  gap: '28px',
+  marginTop: '14px',
+  marginBottom: '28px',
   flexWrap: 'wrap'
 };
 
 const heroTextColStyle = {
-  flex: '1 1 380px',
+  flex: '1 1 320px',
   display: 'flex',
   flexDirection: 'column'
 };
 
 const heyThereWrapperStyle = {
-  marginBottom: '10px'
+  marginBottom: '8px'
 };
 
 const heyThereTextStyle = {
   fontFamily: 'var(--font-hand)',
-  fontSize: '1.65rem',
+  fontSize: '1.45rem',
   color: 'var(--text-ink)',
   display: 'inline-block',
   borderBottom: '2.5px solid var(--primary-lavender)',
@@ -129,52 +129,52 @@ const heyThereTextStyle = {
 };
 
 const mainTitleStyle = {
-  fontSize: '3.4rem',
+  fontSize: '2.3rem',
   fontWeight: 700,
-  lineHeight: '1.05',
+  lineHeight: '1.15',
   color: 'var(--text-ink)',
-  margin: '0 0 16px 0',
+  margin: '0 0 10px 0',
   letterSpacing: '-0.02em',
   fontFamily: 'var(--font-display)'
 };
 
 const taglineStyle = {
-  fontSize: '1.18rem',
+  fontSize: '1.05rem',
   fontWeight: 600,
   color: 'var(--text-ink)',
   lineHeight: '1.4',
-  marginBottom: '18px'
+  marginBottom: '10px'
 };
 
 const dividerBarStyle = {
-  width: '42px',
+  width: '36px',
   height: '3px',
   backgroundColor: 'var(--primary-lavender)',
   borderRadius: '2px',
-  marginBottom: '18px'
+  marginBottom: '12px'
 };
 
 const bioTextStyle = {
-  fontSize: '1.02rem',
+  fontSize: '0.94rem',
   color: 'var(--text-muted)',
-  lineHeight: '1.6',
-  maxWidth: '400px'
+  lineHeight: '1.55',
+  maxWidth: '420px'
 };
 
 const heroIllusColStyle = {
-  flex: '1 1 400px',
+  flex: '0 0 250px',
   display: 'flex',
   justifyContent: 'center'
 };
 
 const heroIllusCardStyle = {
-  borderRadius: '22px',
+  borderRadius: '16px',
   overflow: 'hidden',
-  boxShadow: 'var(--shadow-md)',
+  boxShadow: '0 8px 24px rgba(37, 35, 43, 0.1)',
   border: '1px solid var(--border-card)',
   backgroundColor: '#FFFFFF',
   width: '100%',
-  maxWidth: '440px'
+  maxWidth: '240px'
 };
 
 const heroImgStyle = {
