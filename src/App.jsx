@@ -4,6 +4,7 @@ import { StoreProvider } from './context/StoreContext';
 import { SeedsProvider } from './context/SeedsContext';
 import { Navbar } from './components/Navbar';
 import { Footer } from './components/Footer';
+import { BottomNav } from './components/BottomNav';
 import { StoreDrawer } from './components/StoreDrawer';
 import { Home } from './pages/Home';
 import { Comics } from './pages/Comics';
@@ -38,6 +39,7 @@ export function App() {
             </Routes>
           </main>
           <Footer />
+          <BottomNav />
           <StoreDrawer />
         </Router>
       </SeedsProvider>

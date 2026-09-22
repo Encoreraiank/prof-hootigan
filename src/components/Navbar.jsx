@@ -104,46 +104,26 @@ export const Navbar = () => {
           font-size: 0.92rem;
         }
         @media (max-width: 768px) {
-          .navbar-inner-container {
-            padding: 0 10px !important;
-            gap: 6px !important;
-          }
-          .navbar-brand-logo {
-            height: 32px !important;
-          }
           .navbar-links {
-            gap: 12px !important;
-          }
-          .nav-item {
-            font-size: 0.82rem !important;
-            padding: 4px 1px !important;
-          }
-          .navbar-actions {
-            gap: 6px !important;
-          }
-          .navbar-search-btn {
-            width: 32px !important;
-            height: 32px !important;
-          }
-          .navbar-store-btn {
-            padding: 6px 11px !important;
-            font-size: 0.78rem !important;
-            gap: 5px !important;
-          }
-          .store-arrow-icon {
             display: none !important;
           }
-        }
-        @media (max-width: 400px) {
-          .navbar-links {
-            gap: 7px !important;
+          .navbar-inner-container {
+            padding: 0 16px !important;
           }
-          .nav-item {
-            font-size: 0.76rem !important;
+          .navbar-brand-logo {
+            height: 38px !important;
+          }
+          .navbar-actions {
+            gap: 10px !important;
+          }
+          .navbar-search-btn {
+            width: 36px !important;
+            height: 36px !important;
           }
           .navbar-store-btn {
-            padding: 5px 9px !important;
-            font-size: 0.74rem !important;
+            padding: 7px 14px !important;
+            font-size: 0.84rem !important;
+            gap: 6px !important;
           }
         }
       `}</style>

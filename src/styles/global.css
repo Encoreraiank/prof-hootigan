@@ -25,6 +25,12 @@ body {
   overflow-x: hidden;
 }
 
+@media (max-width: 768px) {
+  body {
+    padding-bottom: 68px;
+  }
+}
+
 #root {
   display: flex;
   flex-direction: column;
