@@ -168,7 +168,7 @@ button {
 
 /* Subtle Card Box */
 .card-box {
-  background-color: var(--bg-white);
+  background-color: var(--bg-card);
   border: 1px solid var(--border-card);
   border-radius: var(--radius-md);
   box-shadow: var(--shadow-sm);
@@ -178,6 +178,48 @@ button {
 .card-box:hover {
   border-color: var(--border-strong);
   box-shadow: var(--shadow-hover);
+}
+
+/* Dark Theme Overrides */
+.dark-theme .navbar-brand-logo {
+  filter: brightness(0) invert(1);
+}
+
+.dark-theme .pill-btn-dark {
+  background-color: #F5F2F8;
+  color: #141318;
+  border-color: #F5F2F8;
+}
+
+.dark-theme .pill-btn-dark:hover {
+  background-color: #DFDAE8;
+  box-shadow: 0 4px 14px rgba(245, 242, 248, 0.2);
+}
+
+.dark-theme .pill-btn-light {
+  background-color: var(--bg-card);
+  color: var(--text-ink);
+  border-color: var(--border-card);
+}
+
+.dark-theme .pill-btn-light:hover {
+  background-color: #272430;
+  border-color: var(--border-strong);
+}
+
+.dark-theme .badge-lavender {
+  background-color: #2D253B;
+  color: #D6C2F7;
+  border-color: #4A3A63;
+}
+
+.dark-theme .badge-coral {
+  background-color: #3C2227;
+  color: #F8969F;
+}
+
+.dark-theme .sticky-note-text {
+  color: #DDD8E8;
 }
 
 /* Custom Scrollbar */

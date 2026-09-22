@@ -85,13 +85,20 @@ export const ComicCard = ({ comic }) => {
             height: 14px !important;
           }
         }
+        .dark-theme .card-arrow-btn {
+          background-color: #2F293D;
+          color: #E8E2F4;
+        }
+        .dark-theme .comic-thumb-wrapper {
+          background-color: #17151D !important;
+        }
       `}</style>
     </div>
   );
 };
 
 const cardContainerStyle = {
-  backgroundColor: '#FFFFFF',
+  backgroundColor: 'var(--bg-card)',
   borderRadius: '18px',
   padding: '12px',
   display: 'flex',

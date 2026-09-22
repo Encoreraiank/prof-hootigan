@@ -2,6 +2,7 @@ import React from 'react';
 import { HashRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import { StoreProvider } from './context/StoreContext';
 import { SeedsProvider } from './context/SeedsContext';
+import { ThemeProvider } from './context/ThemeContext';
 import { Navbar } from './components/Navbar';
 import { Footer } from './components/Footer';
 import { BottomNav } from './components/BottomNav';
@@ -23,27 +24,29 @@ const ScrollToTop = () => {
 
 export function App() {
   return (
-    <StoreProvider>
-      <SeedsProvider>
-        <Router>
-          <ScrollToTop />
-          <Navbar />
-          <main>
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/comics" element={<Comics />} />
-              <Route path="/comics/:id" element={<ComicReader />} />
-              <Route path="/about" element={<ProfHootigan />} />
-              <Route path="/store" element={<Store />} />
-              <Route path="*" element={<Home />} />
-            </Routes>
-          </main>
-          <Footer />
-          <BottomNav />
-          <StoreDrawer />
-        </Router>
-      </SeedsProvider>
-    </StoreProvider>
+    <ThemeProvider>
+      <StoreProvider>
+        <SeedsProvider>
+          <Router>
+            <ScrollToTop />
+            <Navbar />
+            <main>
+              <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/comics" element={<Comics />} />
+                <Route path="/comics/:id" element={<ComicReader />} />
+                <Route path="/about" element={<ProfHootigan />} />
+                <Route path="/store" element={<Store />} />
+                <Route path="*" element={<Home />} />
+              </Routes>
+            </main>
+            <Footer />
+            <BottomNav />
+            <StoreDrawer />
+          </Router>
+        </SeedsProvider>
+      </StoreProvider>
+    </ThemeProvider>
   );
 }
 

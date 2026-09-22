@@ -256,7 +256,7 @@ export const ComicReader = () => {
 const readerNavWrapperStyle = {
   position: 'sticky',
   top: 'var(--navbar-height)',
-  backgroundColor: 'rgba(248, 244, 236, 0.96)',
+  backgroundColor: 'var(--navbar-bg)',
   backdropFilter: 'blur(8px)',
   borderBottom: '1px solid var(--border-card)',
   zIndex: 100,
@@ -303,7 +303,7 @@ const zoomControlsStyle = {
   display: 'flex',
   alignItems: 'center',
   gap: '4px',
-  backgroundColor: '#FFFFFF',
+  backgroundColor: 'var(--bg-card)',
   borderRadius: 'var(--radius-pill)',
   padding: '3px 8px',
   border: '1px solid var(--border-card)'
@@ -324,7 +324,7 @@ const comicCanvasAreaStyle = {
 };
 
 const stripFrameStyle = {
-  backgroundColor: '#FFFFFF',
+  backgroundColor: 'var(--bg-card)',
   borderRadius: '16px',
   overflow: 'hidden',
   boxShadow: '0 8px 30px rgba(37, 35, 43, 0.08)',
@@ -344,7 +344,7 @@ const bottomNavBarStyle = {
   gap: '12px',
   marginTop: '16px',
   padding: '10px 14px',
-  backgroundColor: '#FFFFFF',
+  backgroundColor: 'var(--bg-card)',
   borderRadius: '16px',
   border: '1px solid var(--border-card)',
   boxShadow: '0 4px 16px rgba(37, 35, 43, 0.06)'

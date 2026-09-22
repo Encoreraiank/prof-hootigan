@@ -1,10 +1,8 @@
 import React from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
-import { Home, BookOpen, Smile, ShoppingBag } from 'lucide-react';
-import { useStore } from '../context/StoreContext';
+import { Home, BookOpen, Smile } from 'lucide-react';
 
 export const BottomNav = () => {
-  const { setIsDrawerOpen, cartCount } = useStore();
   const location = useLocation();
 
   // Helper to check if current route matches
@@ -22,7 +20,7 @@ export const BottomNav = () => {
           className={({ isActive }) => `bottom-nav-item ${isActive ? 'active' : ''}`}
         >
           <div className="nav-icon-wrapper">
-            <Home size={21} strokeWidth={isHomeActive ? 2.4 : 1.8} />
+            <Home size={22} strokeWidth={isHomeActive ? 2.4 : 1.8} />
           </div>
           <span className="nav-label">Home</span>
         </NavLink>
@@ -33,34 +31,21 @@ export const BottomNav = () => {
           className={() => `bottom-nav-item ${isComicsActive ? 'active' : ''}`}
         >
           <div className="nav-icon-wrapper">
-            <BookOpen size={21} strokeWidth={isComicsActive ? 2.4 : 1.8} />
+            <BookOpen size={22} strokeWidth={isComicsActive ? 2.4 : 1.8} />
           </div>
           <span className="nav-label">Comics</span>
         </NavLink>
 
-        {/* 3. Prof Hootigan (About) Link */}
+        {/* 3. Prof Hootigan Link */}
         <NavLink
           to="/about"
           className={() => `bottom-nav-item ${isAboutActive ? 'active' : ''}`}
         >
           <div className="nav-icon-wrapper">
-            <Smile size={21} strokeWidth={isAboutActive ? 2.4 : 1.8} />
+            <Smile size={22} strokeWidth={isAboutActive ? 2.4 : 1.8} />
           </div>
-          <span className="nav-label">About</span>
+          <span className="nav-label">Prof Hootigan</span>
         </NavLink>
-
-        {/* 4. Store Button */}
-        <button
-          onClick={() => setIsDrawerOpen(true)}
-          className="bottom-nav-item bottom-nav-btn"
-          aria-label="Open Store"
-        >
-          <div className="nav-icon-wrapper store-icon-wrapper">
-            <ShoppingBag size={21} strokeWidth={1.8} />
-            {cartCount > 0 && <span className="bottom-nav-badge">{cartCount}</span>}
-          </div>
-          <span className="nav-label">Store</span>
-        </button>
       </div>
 
       <style>{`
@@ -76,11 +61,11 @@ export const BottomNav = () => {
             left: 0;
             right: 0;
             z-index: 950;
-            background: rgba(255, 255, 255, 0.88);
+            background: var(--bottom-nav-bg);
             backdrop-filter: blur(20px) saturate(180%);
             -webkit-backdrop-filter: blur(20px) saturate(180%);
-            border-top: 1px solid rgba(37, 35, 43, 0.08);
-            box-shadow: 0 -4px 20px rgba(37, 35, 43, 0.07);
+            border-top: 1px solid var(--border-card);
+            box-shadow: 0 -4px 20px var(--shadow-sm);
             padding: 6px 16px;
             padding-bottom: calc(6px + env(safe-area-inset-bottom, 8px));
           }
@@ -89,7 +74,7 @@ export const BottomNav = () => {
             display: flex;
             align-items: center;
             justify-content: space-around;
-            max-width: 440px;
+            max-width: 420px;
             margin: 0 auto;
           }
 
@@ -99,9 +84,9 @@ export const BottomNav = () => {
             align-items: center;
             justify-content: center;
             gap: 3px;
-            color: #7D7687;
+            color: var(--text-muted);
             text-decoration: none;
-            padding: 4px 12px;
+            padding: 4px 16px;
             border-radius: 12px;
             transition: all 0.18s cubic-bezier(0.16, 1, 0.3, 1);
             position: relative;
@@ -109,6 +94,8 @@ export const BottomNav = () => {
             border: none;
             cursor: pointer;
             -webkit-tap-highlight-color: transparent;
+            flex: 1;
+            max-width: 120px;
           }
 
           .nav-icon-wrapper {
@@ -127,6 +114,7 @@ export const BottomNav = () => {
             letter-spacing: 0.01em;
             line-height: 1;
             transition: color 0.18s ease;
+            white-space: nowrap;
           }
 
           /* Active State */
@@ -148,7 +136,7 @@ export const BottomNav = () => {
             content: '';
             position: absolute;
             bottom: -2px;
-            width: 14px;
+            width: 16px;
             height: 3px;
             background-color: var(--accent-coral);
             border-radius: 2px;
@@ -156,23 +144,6 @@ export const BottomNav = () => {
 
           .bottom-nav-item:active {
             transform: scale(0.92);
-          }
-
-          .bottom-nav-badge {
-            position: absolute;
-            top: -2px;
-            right: -6px;
-            background-color: var(--accent-coral);
-            color: #FFFFFF;
-            font-size: 0.65rem;
-            font-weight: 700;
-            width: 16px;
-            height: 16px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border: 1.5px solid #FFFFFF;
           }
         }
       `}</style>

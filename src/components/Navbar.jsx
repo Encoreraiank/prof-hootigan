@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
 import { NavLink, Link } from 'react-router-dom';
-import { ShoppingBag, Search, ArrowRight } from 'lucide-react';
+import { ShoppingBag, Search, ArrowRight, Sun, Moon } from 'lucide-react';
 import { useStore } from '../context/StoreContext';
+import { useTheme } from '../context/ThemeContext';
 import { SearchModal } from './SearchModal';
 
 export const Navbar = () => {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const { setIsDrawerOpen } = useStore();
+  const { isDark, toggleTheme } = useTheme();
 
   return (
     <>
@@ -22,7 +24,7 @@ export const Navbar = () => {
             />
           </Link>
 
-          {/* Navigation Links (Visible on both Desktop and Mobile, arranged properly) */}
+          {/* Navigation Links (Visible on Desktop) */}
           <nav className="navbar-links" style={desktopNavStyle}>
             <NavLink
               to="/"
@@ -45,16 +47,32 @@ export const Navbar = () => {
             </NavLink>
           </nav>
 
-          {/* Right Action Buttons: Search + Store (Replaces hamburger menu on mobile) */}
+          {/* Right Action Buttons: Search + Theme Toggle + Store */}
           <div style={actionsStyle} className="navbar-actions">
+            {/* Search Button */}
             <button
               onClick={() => setIsSearchOpen(true)}
-              style={searchBtnStyle}
-              className="navbar-search-btn"
+              style={iconBtnStyle}
+              className="navbar-icon-btn navbar-search-btn"
               aria-label="Search comics"
               title="Search"
             >
-              <Search size={18} color="var(--text-ink)" />
+              <Search size={19} color="var(--text-ink)" />
+            </button>
+
+            {/* Light / Dark Mode Toggle */}
+            <button
+              onClick={toggleTheme}
+              style={iconBtnStyle}
+              className="navbar-icon-btn navbar-theme-btn"
+              aria-label={isDark ? 'Switch to light mode' : 'Switch to dark mode'}
+              title={isDark ? 'Switch to light mode' : 'Switch to dark mode'}
+            >
+              {isDark ? (
+                <Sun size={20} color="#FBC02D" strokeWidth={2.2} />
+              ) : (
+                <Moon size={19} color="var(--text-ink)" strokeWidth={2} />
+              )}
             </button>
 
             {/* Store Pill Button */}
@@ -98,6 +116,21 @@ export const Navbar = () => {
           background-color: var(--accent-coral);
           border-radius: 4px;
         }
+        .navbar-icon-btn {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 36px;
+          height: 36px;
+          border-radius: 50%;
+          background-color: transparent;
+          cursor: pointer;
+          transition: transform 0.18s ease, background-color 0.18s ease;
+        }
+        .navbar-icon-btn:hover {
+          background-color: var(--border-subtle);
+          transform: scale(1.08);
+        }
         .navbar-store-btn {
           padding: 9px 18px;
           gap: 7px;
@@ -108,22 +141,22 @@ export const Navbar = () => {
             display: none !important;
           }
           .navbar-inner-container {
-            padding: 0 16px !important;
+            padding: 0 14px !important;
           }
           .navbar-brand-logo {
-            height: 38px !important;
-          }
-          .navbar-actions {
-            gap: 10px !important;
-          }
-          .navbar-search-btn {
-            width: 36px !important;
             height: 36px !important;
           }
+          .navbar-actions {
+            gap: 8px !important;
+          }
+          .navbar-icon-btn {
+            width: 34px !important;
+            height: 34px !important;
+          }
           .navbar-store-btn {
-            padding: 7px 14px !important;
-            font-size: 0.84rem !important;
-            gap: 6px !important;
+            padding: 6px 12px !important;
+            font-size: 0.82rem !important;
+            gap: 5px !important;
           }
         }
       `}</style>
@@ -135,12 +168,14 @@ const headerStyle = {
   position: 'sticky',
   top: 0,
   zIndex: 900,
-  backgroundColor: 'rgba(248, 244, 236, 0.96)',
-  backdropFilter: 'blur(8px)',
-  borderBottom: '1px solid rgba(37, 35, 43, 0.08)',
+  backgroundColor: 'var(--navbar-bg)',
+  backdropFilter: 'blur(12px)',
+  WebkitBackdropFilter: 'blur(12px)',
+  borderBottom: '1px solid var(--border-subtle)',
   height: 'var(--navbar-height)',
   display: 'flex',
-  alignItems: 'center'
+  alignItems: 'center',
+  transition: 'background-color 0.25s ease, border-color 0.25s ease'
 };
 
 const navContainerStyle = {
@@ -166,17 +201,11 @@ const desktopNavStyle = {
 const actionsStyle = {
   display: 'flex',
   alignItems: 'center',
-  gap: '12px',
+  gap: '10px',
   flexShrink: 0
 };
 
-const searchBtnStyle = {
-  display: 'flex',
-  alignItems: 'center',
-  justifyContent: 'center',
-  width: '36px',
-  height: '36px',
-  borderRadius: '50%',
-  color: 'var(--text-ink)',
-  cursor: 'pointer'
+const iconBtnStyle = {
+  border: 'none',
+  padding: 0
 };

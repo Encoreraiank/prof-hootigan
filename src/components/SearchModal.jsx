@@ -115,11 +115,11 @@ const modalOverlayStyle = {
 };
 
 const modalContentStyle = {
-  backgroundColor: '#FFFFFF',
+  backgroundColor: 'var(--bg-card)',
   width: '100%',
   maxWidth: '560px',
   borderRadius: '20px',
-  boxShadow: '0 20px 40px rgba(37, 35, 43, 0.18)',
+  boxShadow: '0 20px 40px rgba(0, 0, 0, 0.25)',
   overflow: 'hidden',
   height: 'fit-content',
   maxHeight: '75vh',

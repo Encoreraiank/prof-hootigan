@@ -1,8 +1,10 @@
 :root {
-  /* Colors */
+  /* Light Mode Colors */
   --bg-cream: #F8F4EC;
   --bg-white: #FFFFFF;
   --bg-card: #FFFFFF;
+  --navbar-bg: rgba(248, 244, 236, 0.96);
+  --bottom-nav-bg: rgba(255, 255, 255, 0.88);
   --primary-lavender: #DCC8F4;
   --lavender-light: #EFE7FA;
   --accent-coral: #E98991;
@@ -41,4 +43,32 @@
 
   --transition-fast: 0.18s ease;
   --transition-smooth: 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Dark Theme Palette */
+[data-theme='dark'],
+.dark-theme {
+  --bg-cream: #141318;
+  --bg-white: #1F1D26;
+  --bg-card: #1F1D26;
+  --navbar-bg: rgba(20, 19, 24, 0.94);
+  --bottom-nav-bg: rgba(31, 29, 38, 0.92);
+  --primary-lavender: #C4A5EC;
+  --lavender-light: #2A2436;
+  --accent-coral: #F2919A;
+  --coral-light: #382126;
+  --accent-blue: #97ABDF;
+  --blue-light: #202636;
+
+  --text-ink: #F5F2F8;
+  --text-muted: #A6A0B2;
+  --text-light: #7E778B;
+
+  --border-subtle: rgba(255, 255, 255, 0.08);
+  --border-card: rgba(255, 255, 255, 0.12);
+  --border-strong: rgba(255, 255, 255, 0.22);
+
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.25);
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.38);
+  --shadow-hover: 0 12px 32px rgba(0, 0, 0, 0.48);
 }

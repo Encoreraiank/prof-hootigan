@@ -104,11 +104,11 @@ const overlayStyle = {
 };
 
 const modalStyle = {
-  backgroundColor: '#FFFFFF',
+  backgroundColor: 'var(--bg-card)',
   borderRadius: '24px',
   width: '100%',
   maxWidth: '440px',
-  boxShadow: '0 20px 50px rgba(37, 35, 43, 0.2)',
+  boxShadow: '0 20px 50px rgba(0, 0, 0, 0.3)',
   border: '1px solid var(--border-card)',
   overflow: 'hidden'
 };

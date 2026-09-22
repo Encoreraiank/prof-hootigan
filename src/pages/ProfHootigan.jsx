@@ -253,7 +253,7 @@ const heroIllusCardStyle = {
   overflow: 'hidden',
   boxShadow: '0 8px 24px rgba(37, 35, 43, 0.1)',
   border: '1px solid var(--border-card)',
-  backgroundColor: '#FFFFFF',
+  backgroundColor: 'var(--bg-card)',
   width: '100%',
   maxWidth: '240px'
 };
@@ -266,7 +266,7 @@ const heroImgStyle = {
 
 const sectionDividerStyle = {
   height: '1px',
-  backgroundColor: 'rgba(37, 35, 43, 0.08)',
+  backgroundColor: 'var(--border-subtle)',
   margin: '10px 0 40px 0'
 };
 

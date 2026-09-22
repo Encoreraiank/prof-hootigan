@@ -268,7 +268,7 @@ const heroCarouselContainerStyle = {
   overflow: 'hidden',
   boxShadow: 'var(--shadow-md)',
   border: '1px solid var(--border-card)',
-  backgroundColor: '#FAF5EA'
+  backgroundColor: 'var(--bg-card)'
 };
 
 const heroTrackStyle = {
@@ -284,7 +284,7 @@ const heroSlideStyle = {
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
-  backgroundColor: '#FAF5EA'
+  backgroundColor: 'var(--bg-card)'
 };
 
 const heroImageStyle = {
@@ -302,9 +302,9 @@ const navArrowBaseStyle = {
   width: '42px',
   height: '42px',
   borderRadius: '50%',
-  backgroundColor: 'rgba(255, 255, 255, 0.88)',
+  backgroundColor: 'var(--navbar-bg)',
   backdropFilter: 'blur(6px)',
-  border: '1px solid rgba(37, 35, 43, 0.1)',
+  border: '1px solid var(--border-card)',
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
@@ -339,11 +339,11 @@ const dotsContainerStyle = {
   display: 'flex',
   alignItems: 'center',
   gap: '8px',
-  backgroundColor: 'rgba(255, 255, 255, 0.7)',
+  backgroundColor: 'var(--navbar-bg)',
   backdropFilter: 'blur(6px)',
   padding: '6px 12px',
   borderRadius: '20px',
-  border: '1px solid rgba(37, 35, 43, 0.08)',
+  border: '1px solid var(--border-card)',
   pointerEvents: 'auto'
 };
 
