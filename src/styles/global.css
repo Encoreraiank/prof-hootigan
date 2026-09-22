@@ -181,30 +181,45 @@ button {
 }
 
 /* Dark Theme Overrides */
-.dark-theme .navbar-brand-logo {
-  filter: brightness(0) invert(1);
-}
-
 .dark-theme .pill-btn-dark {
-  background-color: #F5F2F8;
-  color: #141318;
-  border-color: #F5F2F8;
+  background-color: #2D2838;
+  color: #FFFFFF;
+  border: 1px solid rgba(255, 255, 255, 0.22);
 }
 
 .dark-theme .pill-btn-dark:hover {
-  background-color: #DFDAE8;
-  box-shadow: 0 4px 14px rgba(245, 242, 248, 0.2);
+  background-color: #3C364B;
+  border-color: rgba(255, 255, 255, 0.38);
+  color: #FFFFFF;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4);
 }
 
 .dark-theme .pill-btn-light {
-  background-color: var(--bg-card);
-  color: var(--text-ink);
-  border-color: var(--border-card);
+  background-color: #1F1D26;
+  color: #F5F2F8;
+  border: 1px solid rgba(255, 255, 255, 0.14);
 }
 
 .dark-theme .pill-btn-light:hover {
-  background-color: #272430;
-  border-color: var(--border-strong);
+  background-color: #2B2834;
+  border-color: rgba(255, 255, 255, 0.28);
+}
+
+.dark-theme .card-arrow-btn {
+  background-color: #312B3E !important;
+  color: #FFFFFF !important;
+  border: 1px solid rgba(255, 255, 255, 0.16) !important;
+}
+
+.dark-theme .card-arrow-btn svg {
+  color: #FFFFFF !important;
+  stroke: #FFFFFF !important;
+}
+
+.dark-theme .comic-card-container:hover .card-arrow-btn {
+  background-color: var(--accent-coral) !important;
+  border-color: var(--accent-coral) !important;
+  color: #FFFFFF !important;
 }
 
 .dark-theme .badge-lavender {

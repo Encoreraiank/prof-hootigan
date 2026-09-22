@@ -41,8 +41,21 @@ export const BottomNav = () => {
           to="/about"
           className={() => `bottom-nav-item ${isAboutActive ? 'active' : ''}`}
         >
-          <div className="nav-icon-wrapper">
-            <Smile size={22} strokeWidth={isAboutActive ? 2.4 : 1.8} />
+          <div className="nav-icon-wrapper avatar-icon-wrapper">
+            <img
+              src="./assets/branding/prof-hootigan-round-white-96.png"
+              alt="Prof Hootigan"
+              className="bottom-nav-avatar"
+              style={{
+                width: '26px',
+                height: '26px',
+                borderRadius: '50%',
+                objectFit: 'contain',
+                backgroundColor: '#FFFFFF',
+                boxShadow: isAboutActive ? '0 0 0 2px var(--accent-coral)' : '0 1px 4px rgba(0,0,0,0.18)',
+                transition: 'all 0.18s ease'
+              }}
+            />
           </div>
           <span className="nav-label">Prof Hootigan</span>
         </NavLink>

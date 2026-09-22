@@ -29,7 +29,7 @@ export const FeedTheHootigan = ({ compact = false }) => {
           <div style={actionRowStyle}>
             <button
               onClick={handleFeed}
-              className={`pill-btn pill-btn-dark feed-btn-hover ${justFed ? 'feed-btn-pressed' : ''}`}
+              className={`pill-btn pill-btn-coral feed-btn-hover ${justFed ? 'feed-btn-pressed' : ''}`}
               style={feedBtnStyle}
             >
               <span style={{ fontSize: '1.2rem' }}>🎃</span>
@@ -61,7 +61,7 @@ export const FeedTheHootigan = ({ compact = false }) => {
         }
         .feed-btn-hover:hover {
           transform: translateY(-2px);
-          background-color: #1A1820;
+          background-color: #d9757d;
         }
         .feed-btn-pressed {
           transform: scale(0.95) !important;
@@ -80,12 +80,12 @@ export const FeedTheHootigan = ({ compact = false }) => {
 };
 
 const sectionContainerStyle = {
-  backgroundColor: '#F7F2FD',
+  backgroundColor: 'var(--lavender-light)',
   borderRadius: '24px',
-  border: '1px solid rgba(220, 200, 244, 0.55)',
+  border: '1px solid var(--border-card)',
   padding: '32px 36px',
   margin: '36px 0 20px 0',
-  boxShadow: '0 4px 18px rgba(220, 200, 244, 0.12)'
+  boxShadow: 'var(--shadow-sm)'
 };
 
 const contentGridStyle = {
@@ -106,7 +106,7 @@ const categoryBadgeStyle = {
   fontSize: '0.72rem',
   letterSpacing: '0.14em',
   fontWeight: 700,
-  color: '#766099',
+  color: 'var(--primary-lavender)',
   marginBottom: '6px',
   textTransform: 'uppercase'
 };
@@ -138,13 +138,14 @@ const actionRowStyle = {
   display: 'flex',
   alignItems: 'center',
   gap: '12px',
-  marginBottom: '10px'
+  marginBottom: '6px'
 };
 
 const feedBtnStyle = {
-  padding: '12px 24px',
-  fontSize: '0.98rem',
-  gap: '10px'
+  padding: '11px 26px',
+  fontSize: '0.96rem',
+  gap: '10px',
+  boxShadow: '0 4px 14px rgba(233, 137, 145, 0.35)'
 };
 
 const subtextNoteStyle = {
@@ -163,9 +164,9 @@ const illusColStyle = {
 const illusCardStyle = {
   borderRadius: '18px',
   overflow: 'hidden',
-  boxShadow: '0 8px 24px rgba(37, 35, 43, 0.07)',
-  backgroundColor: '#FFFFFF',
-  border: '1px solid rgba(220, 200, 244, 0.6)',
+  boxShadow: 'var(--shadow-sm)',
+  backgroundColor: 'var(--bg-card)',
+  border: '1px solid var(--border-card)',
   width: '100%',
   maxWidth: '440px'
 };

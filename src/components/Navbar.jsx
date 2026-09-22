@@ -17,7 +17,7 @@ export const Navbar = () => {
           {/* Brand Logo */}
           <Link to="/" style={brandLinkStyle} className="navbar-brand">
             <img
-              src="./assets/branding/prof-hootigan-logo.png"
+              src={isDark ? "./assets/branding/prof-hootigan-logo-dark.png" : "./assets/branding/prof-hootigan-logo.png"}
               alt="Prof Hootigan"
               className="navbar-brand-logo"
               style={{ height: '40px', width: 'auto', objectFit: 'contain' }}
